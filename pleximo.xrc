@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxFrame" name="main_frame">
+		<style>wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL</style>
+		<size>1024,768</size>
+		<title>Pleximo</title>
+		<centered>1</centered>
+		<aui_managed>0</aui_managed>
+		<object class="wxGridBagSizer">
+			<minsize>1024,768</minsize>
+			<vgap>0</vgap>
+			<hgap>0</hgap>
+			<growablecols>2</growablecols>
+			<growablerows>8</growablerows>
+			<object class="sizeritem">
+				<cellpos>0,0</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxStaticText" name="m_staticText3">
+					<label>Width</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>1,0</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxStaticText" name="m_staticText4">
+					<label>Height</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>2,0</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxStaticText">
+					<label>Colors</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>3,0</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxStaticText" name="m_staticText6">
+					<label>Top margin</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>4,0</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxStaticText" name="m_staticText7">
+					<label>Bottom margin</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>5,0</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxStaticText" name="m_staticText8">
+					<label>Left margin</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>6,0</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxStaticText" name="m_staticText9">
+					<label>Right margin</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>0,1</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxTextCtrl" name="input_width">
+					<style>wxTE_PROCESS_ENTER</style>
+					<value></value>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>1,1</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxTextCtrl" name="input_height">
+					<style>wxTE_PROCESS_ENTER</style>
+					<value></value>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>2,1</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxTextCtrl" name="input_colors">
+					<style>wxTE_PROCESS_ENTER</style>
+					<value></value>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>7,0</cellpos>
+				<cellspan>1,2</cellspan>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxButton" name="button_reset">
+					<label>Reset</label>
+					<default>0</default>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>3,1</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxTextCtrl" name="input_top_margin">
+					<style>wxTE_PROCESS_ENTER</style>
+					<value></value>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>4,1</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxTextCtrl" name="input_bottom_margin">
+					<style>wxTE_PROCESS_ENTER</style>
+					<value></value>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>5,1</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxTextCtrl" name="input_left_margin">
+					<style>wxTE_PROCESS_ENTER</style>
+					<value></value>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>6,1</cellpos>
+				<cellspan>1,1</cellspan>
+				<flag>wxALL</flag>
+				<border>5</border>
+				<object class="wxTextCtrl" name="input_right_margin">
+					<style>wxTE_PROCESS_ENTER</style>
+					<value></value>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<cellpos>0,2</cellpos>
+				<cellspan>9,1</cellspan>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>0</border>
+				<object class="unknown" name="plot_view" />
+			</object>
+		</object>
+		<object class="wxMenuBar" name="m_menubar2">
+			<label>MyMenuBar</label>
+			<object class="wxMenu" name="m_menu2">
+				<label>File</label>
+				<object class="wxMenuItem" name="menu_load_image">
+					<label>Load image\tCtrl+O</label>
+					<help></help>
+					<bitmap stock_id="wxART_FILE_OPEN" stock_client="">undefined.png</bitmap>
+				</object>
+				<object class="wxMenuItem" name="menu_print">
+					<label>Print\tCtrl+P</label>
+					<help></help>
+					<bitmap stock_id="wxART_PRINT" stock_client="">undefined.png</bitmap>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="menu_exit">
+					<label>Exit</label>
+					<help></help>
+					<bitmap stock_id="wxART_QUIT" stock_client="">undefined.png</bitmap>
+				</object>
+			</object>
+		</object>
+	</object>
+	<object class="wxFrame" name="frame_instructions">
+		<style>wxCAPTION|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxRESIZE_BORDER|wxTAB_TRAVERSAL</style>
+		<size>500,300</size>
+		<title>Instructions</title>
+		<centered>1</centered>
+		<aui_managed>0</aui_managed>
+		<object class="unknown" name="html_instructions" />
+	</object>
+</resource>
