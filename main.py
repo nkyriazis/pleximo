@@ -109,7 +109,7 @@ class ImagePleximatization:
             if (i != H - 1 and k == H - 1) or (j != W - 1 and l == W - 1):
                 stops[diag + 1] = 1
 
-        instructions = '<font size=24><table width="100%">'
+        instructions = '<font size=14><table width="100%">'
         for i, (key, what) in enumerate(groupby(zip(tr, colors, stops), lambda x: x[0][0])):
             color = '#FFFFFF' if i % 2 else '#DDDDDD'
             line = '<tr><td bgcolor="%s">' % color
@@ -182,8 +182,8 @@ class PleximoApp(wx.App):
             self.imgRAM.RemoveFile('im.png')
         self.imgRAM.AddFile('im.png', bmp, wx.BITMAP_TYPE_PNG)
         self.hasPng = True
-        instructions = '<img width="100%" src="memory:im.png"/>' + instructions
-        self.html_instructions.SetPage(instructions)
+        # instructions = '<img width="100%" src="memory:im.png"/>' + instructions
+        # self.html_instructions.SetPage(instructions)
 
     def OnImageLoad(self, image):
         self.UpdateViews(image)
@@ -202,9 +202,9 @@ class PleximoApp(wx.App):
         self.frame = self.res.LoadFrame(None, 'main_frame')
         self.printer = wx.html.HtmlEasyPrinting(parentWindow=self.frame)
 
-        self.frame_instructions = self.res.LoadFrame(self.frame, 'frame_instructions')
-        self.html_instructions = wx.html.HtmlWindow(self.frame_instructions)
-        self.res.AttachUnknownControl('html_instructions', self.html_instructions, self.frame_instructions)
+        # self.frame_instructions = self.res.LoadFrame(self.frame, 'frame_instructions')
+        # self.html_instructions = wx.html.HtmlWindow(self.frame_instructions)
+        # self.res.AttachUnknownControl('html_instructions', self.html_instructions, self.frame_instructions)
 
         self.controls = wx.xrc.XRCCTRL(self.frame, 'controls')
         self.figure = Figure()
@@ -239,7 +239,7 @@ class PleximoApp(wx.App):
 
         self.frame.Bind(wx.EVT_BUTTON, self.OnReset, self.button_reset)
         self.frame.Show()
-        self.frame_instructions.Show()
+        # self.frame_instructions.Show()
 
     def OnPrint(self, evt):
         self.printer.PreviewText('<img width="100%" src="memory:im.png"/>' + self.image.generateInstructions()[-1])
