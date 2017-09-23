@@ -1,18 +1,15 @@
-import os
 import wx
-import wx.xrc
 import wx.html
+import wx.xrc
 import numpy as np
-from scipy.misc import imread, imresize
+from scipy.misc import imread
 import matplotlib
 from PIL.Image import fromarray
 from itertools import groupby
-from tempfile import NamedTemporaryFile
 
 matplotlib.use('WXAgg')
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigCanvas, \
-    NavigationToolbar2WxAgg as NavigationToolbar
+from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigCanvas
 
 
 class ImagePleximatization:
@@ -70,7 +67,7 @@ class ImagePleximatization:
     def computeUniqueColors(self, image=None):
         if image is None:
             image = self.computeImage()
-        return fromarray(image).getcolors()
+        return fromarray(image).convert("P").getcolors()
 
     def resize(self, newsize):
         self.height, self.width = newsize
@@ -88,13 +85,15 @@ class ImagePleximatization:
         if self.onRecolor: self.onRecolor(self)
 
     def generateTrajectory(self):
+        img = self.computeImage()
+        H, W = img.shape[:2]
         trajectory = []
-        for i, line in enumerate(xrange(1, self.width + self.height)):
-            start_col = max(0, line - self.height)
-            count = min(line, (self.width - start_col), self.height)
+        for i, line in enumerate(xrange(1, W + H)):
+            start_col = max(0, line - H)
+            count = min(line, (W - start_col), H)
             traversal = []
             for j in xrange(count):
-                traversal.append((i, min(self.height, line) - j - 1, start_col + j))
+                traversal.append((i, min(H, line) - j - 1, start_col + j))
             trajectory += traversal[::-1 if i % 2 else 1]
         return trajectory
 
@@ -118,7 +117,7 @@ class ImagePleximatization:
                 what2 = list(what2)
                 stop = what2[-1][-1]
                 line += ' %d <span style="color:rgb(%d, %d, %d)"><b>&#9632;</b></span>' % (
-                len(what2), key2[0], key2[1], key2[2])
+                    len(what2), key2[0], key2[1], key2[2])
                 if stop: line += ' stop'
             line += '</td></tr>'
             instructions += line
